@@ -1,0 +1,51 @@
+$sh:12px;
+
+html{
+
+    font-size: 10px;
+}
+body{
+
+    font-size:2rem;
+}
+
+@for $i from 6 through 1 {
+    .hh#{$i} {
+      font-size: #{3+ (3-$i*0.5)}rem;
+    }
+  }
+  
+  
+
+$colors:("nav-normal":#A69AD9,
+         "nav-highlight":#E1DBF6,
+         "nav-active":#1e2d68,
+         "nav-bg":#4723D9);
+
+
+/*this is a global class that helps position two elements side by side
+mostly used for the navbar.
+
+leaving some things out from the css like the padding and margin to better handle the menu size
+ 
+ _________________________
+|  icon | icon description|
+|_______|_________________|
+*/
+.menu-element{
+
+  display:grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 2rem;
+  padding:.5rem 0 .5rem 0;
+  margin:0 0 2rem 0rem;
+ 
+}
+
+
+
+body{
+
+  background:#f8fafb;
+}

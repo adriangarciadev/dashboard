@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "../../scss/main.scss";
+
+nav.navbar{
+
+    background-color: map.get(main.$colors, "nav-bg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height:100vh;
+    /*width is controlled directly on the component*/
+    transition: max-width 0.5s;
+    margin: 0 0 0 1rem;
+    position:relative;
+
+
+    li.close-controls{
+        display:flex;
+        margin:0.5rem 0rem 2rem 0rem;
+        line-height: 2rem;
+        color:rgba(255, 255, 255, 0.466);
+        span{
+            white-space: nowrap;
+            font-size: 2rem;
+        }
+        i{
+            font-size:3rem!important;
+        }
+    }
+    
+    .expand-container{
+        position:absolute;
+        right:0rem;
+        span{
+            margin-left: -10rem;
+        }
+    }
+    
+    ul{
+
+
+        /*HANDLING PADDING IN THE COMPONENT ITSELF*/
+        .navbar-element{
+
+            /*
+             padding:.5rem 0 .5rem 0.5rem;
+            margin:0 0 2rem 1rem;*/
+            text-decoration: none;
+            color: map.get(main.$colors, "nav-normal");
+            transition: .3s;
+
+            &:hover{
+                color:map.get(main.$colors, "nav-highlight");
+                background-color:map.get(main.$colors, "nav-active");
+            }
+
+            
+        }
+        .active{
+            //background-color:map.get(main.$colors, "nav-active");
+            color:white;
+        }
+    }
+
+
+
+    .help{
+
+       /* padding:.5rem 0 .5rem 0.5rem;
+        margin:0 0 2rem 0;
+        */text-decoration: none;
+        background:#65ff3a;
+        padding-left: 1rem;        //background:linear-gradient(to right, #65ff3a, #fffaae);
+        margin-left:-1rem;
+        transition: 0.5s;
+
+
+        &:hover{
+            
+            background:#efe455;
+            //background:linear-gradient(to right, #fffaae, #65ff3a);
+
+        }
+       
+    }
+
+}

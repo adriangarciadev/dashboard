@@ -9,8 +9,6 @@ import MainView from './views/main-view';
 import Layout from './views/Layout';
 import Home from './views/Home';
 import Blogs from './views/Blogs';
-
-import { ProjectView as Project} from './views/Project';
 /*
 function App() {
   return (
@@ -42,9 +40,6 @@ function App(){
               <Route index element={<Home />} />
               <Route path="blogs" element={<Blogs />} />
               <Route path="main" element={<MainView />} />
-              <Route path="projects" element={<Blogs />}>
-                  <Route path=":projectID" element={<Project />} ></Route>
-              </Route>
             </Route>
           </Routes>
       );

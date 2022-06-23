@@ -1,0 +1,38 @@
+.project{
+
+    .user-table{
+        li.table-header{
+            display:grid;
+            grid-template-columns: 2fr 3fr 1fr;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 2rem;
+
+            span:first-child{
+                padding-left:2rem;
+                //text-align: center;
+            }
+            
+
+        }
+        li{
+            display:grid;
+            grid-template-columns: 2fr 3fr 1fr;
+            align-items: center;
+            padding:1rem 2rem 1rem 2rem;
+
+            div{
+
+                img{
+                    max-width: 7rem;
+                }
+                span{
+                    padding-left: 3rem;
+                }
+            }
+        }
+        li:nth-child(even) {
+            background-color: #EEFAF6;
+          }
+    }
+}

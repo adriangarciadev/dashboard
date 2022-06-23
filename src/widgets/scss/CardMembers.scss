@@ -1,0 +1,23 @@
+.card-members{
+
+    
+    div.line{
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+
+        span:nth-child(2) {
+            
+            /*hack */
+            margin-top:-2.6rem;
+        
+        }
+
+        ul.member-list{
+
+
+            
+        }
+
+    }
+}

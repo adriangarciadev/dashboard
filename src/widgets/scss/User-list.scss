@@ -1,0 +1,32 @@
+ul.user-list-mini{
+
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0 0 3rem;
+    
+
+    li{
+        list-style: none;
+        width:6rem;
+        margin-left:-3rem;
+
+        img{
+
+         /*   border-radius: 50%;
+            padding:0.001rem;
+            background-color: white;
+        */
+        }
+
+    }
+
+    li.extra-users{
+
+        padding: 0.5rem 0 0 0 ;
+        font-size:3rem;
+        background-color: #f1effb;//make variables.
+        color:#9788cc;//make variables
+        text-align: center;
+    }
+
+}

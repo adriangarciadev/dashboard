@@ -1,0 +1,20 @@
+@use "../../scss/main.scss";
+
+.progressbar-container{
+
+    height: 2*main.$sh;
+    width:100%;
+    .progressbar-outer{
+
+        background-color: gray; 
+        height: main.$sh;
+        width:100%;
+        
+        .progressbar-inner{
+
+            height: main.$sh;
+            background-color: purple;
+
+        }
+    }
+}
