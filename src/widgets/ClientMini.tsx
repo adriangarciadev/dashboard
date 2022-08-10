@@ -1,3 +1,5 @@
+import './scss/ClientPreview.scss'
+
 
 type ClientMiniProps ={
 
@@ -12,10 +14,10 @@ export const ClientMini = (props: ClientMiniProps)=>{
 
     return (
         <div className="client-mini">
-            <h3>{client.name}</h3>
-            <h4>{client.company}</h4>
+            <h3 className="name">{client.name}</h3>
+            <h4 className="company">{client.company}</h4>
 
-            <p>{client.since.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short"})}</p>
+            <p className="date">{client.since.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short"})}</p>
 
 
         </div>

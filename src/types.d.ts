@@ -6,6 +6,7 @@ type dimension ={
 interface user {
 
     name : string,
+    id:number,
     department: string,
     img : string,
     url : string
@@ -31,9 +32,11 @@ type project = {
 
     id:string;
     title : string;
+    description: string;
     platform: ProjectType; 
     due_date: Date;
-    progress: number;
+    totalTasks:number;
+    completedTasks:number;
     members: user[];
 }
 //****-LAYOUT-******/

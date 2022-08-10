@@ -1,3 +1,10 @@
+div.labels-container{
+    width: 40%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
 ul.data-labels{
     display: grid;
     grid-template-columns: 2rem max-content max-content;
@@ -11,7 +18,8 @@ ul.data-labels{
     margin-left: auto;
     margin-right:auto;
     align-items: center;
-    justify-items: center;
+    //justify-items: center;
+    justify-content: center;
     font-size: 1.5rem;
     
 

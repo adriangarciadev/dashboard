@@ -120,13 +120,14 @@ const D3PieChartStyles = {
         if(dimension.width>chartCONFIG.widthCutoff)
         {
             return {
-                width:`${ (1-chartCONFIG.preferedRatio)*100 }%`
+                width:`${ (1-chartCONFIG.preferedRatio)*100 }%`,
             }
         }
         
         else{
             return {
-                width:'100%'
+                width:'100%',
+  
             }
         }
 
@@ -134,9 +135,7 @@ const D3PieChartStyles = {
 
     }
 }
-
-
-export const D3PieChart = ({labels, dataArray, shouldRestart}:{labels?:string[] , dataArray?:number[], shouldRestart?:boolean})=>{
+export const D3PieChart = ({title, labels, dataArray, shouldRestart}:{title?:string, labels?:string[] , dataArray?:number[], shouldRestart?:boolean})=>{
 
 
    // const [ref, dimensions] = useChartDimensions()
@@ -199,8 +198,8 @@ export const D3PieChart = ({labels, dataArray, shouldRestart}:{labels?:string[] 
     console.log(JSON.stringify(dimension))
   
     return (
-            <Card>
-                <h1>{JSON.stringify(dimension)}</h1>
+            <>
+                <h1 style={{textAlign:'center', marginBottom:'2rem'}}>{title}</h1>
                 <div style={{display:'flex', flexWrap: 'wrap'}} ref={ref}>
                     <div style={D3PieChartStyles.getChartDimensions(dimension) }>
                                 <svg className="Pie-Chart" width={size.width} height={size.height}>
@@ -219,17 +218,19 @@ export const D3PieChart = ({labels, dataArray, shouldRestart}:{labels?:string[] 
                                     </g>
                                 </svg>
                             </div>
-                        <div style={D3PieChartStyles.getLabelDimensions(dimension)}>
+                        <div className="labels-container" style={D3PieChartStyles.getLabelDimensions(dimension)}>
                             <div>
                                 <ChartLabels colors={colors} labels={labels} data={data} ></ChartLabels>
                             </div>
                         </div>
 
                 </div>  
-            </Card> 
+            </> 
 
          );
 }
+
+
 
 const ChartLabels = ({colors, labels, data}:{colors:readonly string [], labels:string[], data:number[]})=>{
 

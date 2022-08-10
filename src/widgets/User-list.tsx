@@ -1,4 +1,3 @@
-import { useTransition } from "react";
 import "./scss/User-list.scss"
 
 

@@ -1,14 +1,14 @@
 import * as d3 from "d3";
-import { CardMembersProps } from "../widgets/Card-Members";
+import { TeamMembersPreviewProps } from "../widgets/Team-Members-Preview";
 import { getRandomUser } from "./users_data";
 
 
 
 
-export const getDepartment=(id:string):CardMembersProps=>(departments[id]);
-export const getDeparmentsArray=():CardMembersProps[]=>(Object.keys(departments).map(key=>({...departments[key],id:key})))
+export const getDepartment=(id:string):TeamMembersPreviewProps=>(departments[id]);
+export const getDeparmentsArray=():TeamMembersPreviewProps[]=>(Object.keys(departments).map(key=>({...departments[key],id:key})))
 
-const departments:{[key:string] : CardMembersProps} = {
+const departments:{[key:string] : TeamMembersPreviewProps} = {
 "001":{
     department:"UI",
     quantity:9,

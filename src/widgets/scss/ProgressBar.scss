@@ -2,18 +2,18 @@
 
 .progressbar-container{
 
-    height: 2*main.$sh;
+    height: 0.5rem;
     width:100%;
     .progressbar-outer{
 
-        background-color: gray; 
-        height: main.$sh;
+        background-color: #cecece; 
+        height: 0.5rem;
         width:100%;
         
         .progressbar-inner{
 
-            height: main.$sh;
-            background-color: purple;
+            height: 0.5rem;
+            background-color: #85b5ff;
 
         }
     }

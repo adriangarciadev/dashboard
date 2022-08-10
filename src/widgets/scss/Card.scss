@@ -1,14 +1,25 @@
 .Card{
 
-    background:#ffffff;
     padding:1rem;
-
-    -webkit-box-shadow: 0px 0px 2px 0px rgba(128,128,128,1);
-    -moz-box-shadow: 0px 0px 2px 0px rgba(128,128,128,1);
-    box-shadow: 0px 0px 2px 0px rgba(128,128,128,1);
-
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.19);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.19);
+    border-radius: 1rem !important;
+    transition: opacity 500ms ease-in-out; //, background-color 3s linear !important;
     .title{
         padding:0;
         margin:0;
+    }
+}
+.Card-container{
+    padding:1rem 2rem 0rem 2rem;
+    
+    .Card-link{
+        display: block;
+        transition: transform 0.5s ease-in-out;
+       
+        &:hover{
+            transform: scale(1.05 , 1.05)!important;
+        }
     }
 }

@@ -20,7 +20,7 @@ export const Container = (props:LayoutContainer)=>{
 
 
 
-    if( typeof(row) !=="undefined" && row === false){
+    if( typeof(row) ==="undefined" || row === false){
 
         return (
 
@@ -34,8 +34,8 @@ export const Container = (props:LayoutContainer)=>{
     else{
 
         return(
-            <div className={ getType()}>
-                <div className="row">
+            <div className={ getType() +' g-0 p-0"'}>
+                <div className="row  g-0 m-0">
                     {children}
                 </div>
         </div>

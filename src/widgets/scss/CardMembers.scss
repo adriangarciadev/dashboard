@@ -1,5 +1,12 @@
-.card-members{
+@use "sass:map";
+@use "../../scss/main.scss";
 
+.team-preview{
+
+    .quantity{
+        color:map.get(main.$colors, "subtitle");
+
+    }
     
     div.line{
         display: flex;

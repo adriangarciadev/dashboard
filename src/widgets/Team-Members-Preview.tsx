@@ -4,7 +4,7 @@ import { UserList } from "./User-list";
 import "./scss/CardMembers.scss"
 
 
-export type CardMembersProps = {
+export type TeamMembersPreviewProps = {
 
     department: string,
     quantity:number,
@@ -13,24 +13,23 @@ export type CardMembersProps = {
 };
 
 
-export const CardMembers = (props: CardMembersProps)=>{
+export const TeamMembersPreview = (props: TeamMembersPreviewProps)=>{
 
     const {department, quantity, users} = props;
 
 
-    return (<div className="col-md-4 card-members">
-        <Card>
+    return (<div className="team-preview">
             <div className="line">
-                <span className="h1 fw-bold">{quantity}</span>
+                <span className="quantity h1 fw-bold">{quantity}</span>
                 <span className="hh3"> &#8250;</span>
             </div>
             <div className="line">
-                <span>{department}</span>
+                <span className="department">{department}</span>
                 <div className="ms-auto d-inline">
                     <UserList users={users}></UserList>
                 </div>
             </div>
-        </Card>
+        
         </div>);
 
 }

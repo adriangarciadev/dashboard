@@ -1,12 +1,15 @@
+@use "sass:map";
+
 $sh:12px;
 
 html{
 
-    font-size: 10px;
+    font-size: 8px;
 }
 body{
 
     font-size:2rem;
+    background-color: #f8fafb;
 }
 
 @for $i from 6 through 1 {
@@ -20,7 +23,9 @@ body{
 $colors:("nav-normal":#A69AD9,
          "nav-highlight":#E1DBF6,
          "nav-active":#1e2d68,
-         "nav-bg":#4723D9);
+         "nav-bg":#4723D9,
+         "subtitle":#737373,
+         );
 
 
 /*this is a global class that helps position two elements side by side
@@ -47,5 +52,154 @@ leaving some things out from the css like the padding and margin to better handl
 
 body{
 
-  background:#f8fafb;
+  background: var(--container-bg);
+  font-family: 'Roboto', sans-serif;
+  //font-family: 'Ubuntu', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color:inherit;
+
+  &:hover{
+    color:inherit;
+  }
+}
+
+//css variables best theming option
+
+@mixin menu-theme($menu-bg, $menu-color, $hover-bg, $hover-color, $active-bg, $active-color, $controls-color, $help-bg, $help-color, $help-hover-bg, $help-hover-color){
+
+  --menu-bg:$menu-bg;
+  --menu-color:$menu-color;
+  --menu-hover-bg : $hover-bg;
+  --menu-hover-color:$hover-color;
+  --menu-active-bg: $active-bg;
+  --menu-active-color: $active-color;
+  --menu-controls-color:$controls-color;
+  --menu-help-bg: $help-bg;
+  --menu-help-color: $help-color;
+  --menu-help-hover-bg: $help-hover-bg;
+  --menu-help-hover-color: $help-hover-color;
+
+}
+@mixin viewport-theme($body-bg, $title-bg, $title-color ){
+
+  --container-bg: $body-bg;
+  --title-bg: $title-bg;
+  --title-color: $title-color;
+}
+
+@mixin card-theme($card-bg, $heading-color, $date-bg, $date-color, $shadow-color){
+
+  --card-bg:$card-bg;
+  --card-heading-color:$heading-color;
+  --card-date-bg: $date-bg;
+  --card-date-color: $date-color;
+  --card-shadow-color: $shadow-color;
+
+}
+
+//we created this system so each variable has to be extended when creating a new theme.
+
+$menu-attributes : (
+
+  "--menu-bg" ,
+  "--menu-color" ,
+  "--menu-hover-bg" ,
+  "--menu-hover-color" ,
+  "--menu-active-bg" ,
+  "--menu-active-color" ,
+  "--menu-controls-color" ,
+  "--menu-help-bg" ,
+  "--menu-help-color" ,
+  "--menu-help-hover-bg" ,
+  "--menu-help-hover-color"
+
+);
+
+$viewport-attributes:(
+  "--container-bg" ,
+  "--title-bg" ,
+  "--title-color"
+
+);
+
+$card-attributes:(
+
+  "--card-bg" ,
+  "--card-heading-color" ,
+  "--card-date-bg" ,
+  "--card-date-color" ,
+  "--card-shadow-color"
+
+);
+
+
+
+
+$menu-white:(
+  "--menu-bg": white ,
+  "--menu-color": #A69AD9 ,
+  "--menu-hover-bg": #1e2d68 ,
+  "--menu-hover-color": #E1DBF6 ,
+  "--menu-active-bg" : #d7d7d7 ,
+  "--menu-active-color" : #606580 ,
+  "--menu-controls-color": rgba(0, 0, 0, 0.466) ,
+  "--menu-help-bg": #65ff3a ,
+  "--menu-help-color" :blue ,
+  "--menu-help-hover-bg" :yellow ,
+  "--menu-help-hover-color": blue
+
+);
+
+$viewport-white:(
+  "--container-bg":#f8fafb,
+  "--title-bg": rgba(230, 225, 225, 0.65) ,
+  "--title-color": #999
+);
+
+$card-white:(
+
+  "--card-bg":#ffffff ,
+  "--card-heading-color": #737373 ,
+  "--card-date-bg": lightgray ,
+  "--card-date-color":dimgray ,
+  "--card-shadow-color": rgba(0, 0, 0, 0.19)
+
+);
+
+
+
+@mixin theme-maker($attributes, $attributes-map )
+{
+
+  @each $attribute in $attributes {
+    #{$attribute}: map.get( $attributes-map, $attribute);
+  }
+
+}
+
+
+:root {
+
+  @include theme-maker($menu-attributes , $menu-white);
+  @include theme-maker($viewport-attributes , $viewport-white);
+  @include theme-maker($card-attributes , $card-white);
+
+}
+
+
+$viewport-black:(
+  "--container-bg":black,
+  "--title-bg": rgba(230, 225, 225, 0.65) ,
+  "--title-color": #999
+);
+
+.theme-dark{
+
+  @include theme-maker($menu-attributes , $menu-white);
+  @include theme-maker($viewport-attributes , $viewport-black);
+  @include theme-maker($card-attributes , $card-white);
+
 }

@@ -1,0 +1,70 @@
+div.filter-controls-container{
+
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    position: sticky;
+    top:0px;
+    margin-left:2rem;
+
+    button{
+        height : 4rem;
+        border-radius: 10px;
+        background: white;
+        border:none;
+    }
+
+
+
+
+    ul.filter-options{
+
+        background:#b777f7;
+        display: flex;
+        justify-content: flex-start;
+        padding:1rem 1rem 0.5rem 3rem;
+        margin:0rem !important;
+        list-style: none;
+       
+  
+
+
+        li{
+            padding:1rem;
+            background:white;
+            border-radius: 12px;
+            margin-left:3rem;
+            
+        }
+    }
+
+    select{
+        margin-left: 1rem;
+        font-size: 2rem;
+        height : 4rem;
+        border-radius: 8px;
+    }
+    
+}
+
+.member-card{
+    display:flex;
+  
+    .right{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    p{
+        text-align: center;
+    }
+    .name{
+        font-weight: bold;
+        font-size: 3rem;
+        text-decoration: underline;
+
+    }
+
+
+}

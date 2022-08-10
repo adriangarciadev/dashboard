@@ -3,7 +3,7 @@ import * as d3 from "d3"
 import React from "react";
 
 
-//a generic scale that servers to let us work with any scale will be parametrized later.
+//a generic scale that servers to let us work with any scale.
 interface genericScale{
 
   (value: any): any;
@@ -72,7 +72,6 @@ export const AxisFinal = ( props: AxisProps)=>
 
     return (
         <g className={config.gclassName} transform={config.gtransform} {...rest}>
-          <p>ticks  : {config.numberOfTicks} ; bounded Height : {JSON.stringify(dimensions)} </p>
           <line
             className="Axis__line"
             x2={config.x2}

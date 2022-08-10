@@ -3,38 +3,35 @@ import Card from "./Card";
 import ProgressBar from "./Progress-bar";
 import {ProgressBarTasks} from "./Progress-bar-tasks";
 import {UserList} from "./User-list";
-import "./scss/CardProject.scss"
 import React from "react";
 import { Link } from "react-router-dom";
+import "./scss/CardProject.scss"
 
 
 
 
 
 
-export type CardProjectProps = {
+export type ProjectPreviewProps = {
     project:project;
     children?:React.ReactNode;
 }
 
-export const CardProject = (props:CardProjectProps)=>{
+export const ProjectPreview = (props:ProjectPreviewProps)=>{
 
 
-    let {id, title,platform, due_date, progress, members} = props.project;
+    let {id, title,platform, due_date, totalTasks, completedTasks,  members} = props.project;
 
-    return (<div className="col-md-4 card-project">
-                <Link to={`/projects/${id}`}  style={{textDecoration: 'none',color:'inherit'}}>
-
-                    <Card title={title}>
+    return (<div className="card-project">
+                        <h2>{title}</h2> 
                         <div className="card-project-platform">{platform}</div>
                         <span className="card-project-date">{ due_date.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short"}) }</span>
-                        <ProgressBarTasks currentCompletion={0} totalTasks={0}></ProgressBarTasks>
-                        <ProgressBar progress={progress}></ProgressBar>
+                        <ProgressBarTasks currentCompletion={ completedTasks } totalTasks={totalTasks}></ProgressBarTasks>
+                        <ProgressBar progress={completedTasks / totalTasks}></ProgressBar>
                         <UserList users={members}></UserList>
-                    </Card>
-                </Link>
-            </div>)
-
+                
+            </div>
+    );
 
    
 }

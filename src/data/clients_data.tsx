@@ -1,10 +1,10 @@
-import { CardClientProps } from "../widgets/Card-Client";
+import { ClientPreviewProps } from "../widgets/Client-Preview";
 
 
-export const getClient = (id:string):CardClientProps=>(clientsData[id])
-export const getClientsArray = ():CardClientProps[]=>(Object.keys(clientsData).map((key)=>({...clientsData[key], id:key})))
+export const getClient = (id:string):ClientPreviewProps=>(clientsData[id])
+export const getClientsArray = ():ClientPreviewProps[]=>(Object.keys(clientsData).map((key)=>({...clientsData[key], id:key})))
 
-const clientsData: {[key:string] : CardClientProps} = {
+const clientsData: {[key:string] : ClientPreviewProps} = {
 
     "001":
     {

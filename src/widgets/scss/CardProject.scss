@@ -1,4 +1,14 @@
+@use "sass:map";
+@use "../../scss/main.scss";
+
+
 .card-project{
+
+    h2{
+        font-weight: bold;
+        color:map.get(main.$colors, "subtitle");
+        
+    }
 
     .card-project-platform{
 

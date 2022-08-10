@@ -28,8 +28,8 @@ const Layout = () =>{
 
 
     return (
-        <Container type="fluid">
-              <Navbar></Navbar>
+        <Container type="fluid" row>
+            <Navbar></Navbar>
             <div className="col">
               <Outlet />
             </div>

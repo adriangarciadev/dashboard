@@ -1,0 +1,27 @@
+.member{
+
+    .member-data{
+        display: flex;
+        //justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        .name{
+                font-weight: bold;
+                font-size: 3rem;
+                text-decoration: underline;
+        
+        }
+    }
+    .member-info{
+        padding:4rem 4rem;
+        display: flex;
+        //justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

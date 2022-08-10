@@ -5,11 +5,18 @@ const names:string[] = ["cat","pete","dough","steve","dog","pert","clark","donna
 const randomNameIndex = d3.randomInt( 0 , names.length );
 
 
-const jobs:string[] = ["Programming" ,"UI", "Quality assurance","Accounting","Management",""]
+const jobs:string[] = ["Programming" ,"UI", "Quality assurance","Accounting","Management","Accounting"]
 const randomJobs = d3.randomInt(0,jobs.length)
 
 
 const randomProfile = d3.randomInt(1,9);
+
+let id = 0;
+const getNextID=()=>{
+    const temp = id;
+    id+=1;
+    return temp;
+}
 
 
 export const getRandomUser=():user=>{
@@ -20,7 +27,8 @@ export const getRandomUser=():user=>{
    
   
     return {
-            name:names[random],
+            name:names[random] ,
+            id:getNextID() ,
             img:`pfile_0${ randomProfile( ) }.png`,
             department:jobs[ randomJobs() ],
             "url":names[random]

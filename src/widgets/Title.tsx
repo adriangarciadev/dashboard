@@ -1,18 +1,18 @@
-
+import './scss/Title.scss'
 
 type TitleProps ={
 
-    text : string;
+    children?: React.ReactNode;
 }
 
 const Title = (props:TitleProps)=>{
 
-    let {text} = props;
+    let {children} = props;
 
 
     return (
         
-        <h1>{text}</h1>
+        <h1 className="title">{children}</h1>
 
     );
 

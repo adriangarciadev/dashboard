@@ -4,24 +4,20 @@ import { ClientMini } from "./ClientMini";
 
 
 
-export type CardClientProps = {
+export type ClientPreviewProps = {
 
     title:string,
     client:client
 
 }
 
-export const CardClient = (props : CardClientProps)=>{
+export const ClientPreview = (props : ClientPreviewProps)=>{
 
     let {title,client} = props;
 
     return (
-    <div className="col-md-4 card-client">
-        <Card title={ title } >
             <ClientMini client={client}></ClientMini>
-
-        </Card>
-    </div>);
+      );
     
 
 }

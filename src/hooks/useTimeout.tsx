@@ -5,9 +5,9 @@ import { useEffect, useRef } from "react"
  * @param {number} timeout the setInterval timeout function
  * @returns {number|null} returns the interval ID or null if it hasn't been set yet somehow.
  */
-export const useInterval=(callback:Function, timeout?:number|undefined, doOnce?:boolean):number|null=>{
+export const useTimeout=(callback:Function, timeout?:number|undefined, doOnce?:boolean):number|null=>{
 
-    const intervalID = useRef<number | null> (null);
+    const timeoutID = useRef<number | null> (null);
     const callbackRef = useRef<Function | null>(null);
 
 
@@ -19,22 +19,22 @@ export const useInterval=(callback:Function, timeout?:number|undefined, doOnce?:
     useEffect(()=>{
 
         if( typeof(timeout)==='number' 
-        && intervalID.current === null 
+        && timeoutID.current === null 
         && callbackRef.current!==null){
 
-            intervalID.current = setInterval(callbackRef.current, timeout);
+            timeoutID.current = setTimeout(callbackRef.current, timeout);
         
         }
         return ()=>{
             //type check
-            if(intervalID.current)
+            if(timeoutID.current)
             {   
-                clearInterval(intervalID.current)
-                intervalID.current=null;
+                clearTimeout(timeoutID.current)
+                timeoutID.current=null;
             }
         }
 
     }, [timeout, doOnce])
 
-    return intervalID.current;
+    return timeoutID.current;
 }

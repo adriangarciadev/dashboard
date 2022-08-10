@@ -4,11 +4,11 @@ import { AxisProps,  AxisFinal} from "./D3Chart/Axis2"
 import { getTimelineData, useChartDimensions, useUniqueId } from "./D3Chart/common";
 import { Line, LineProps } from "./D3Chart/Line";
 import { Gradient } from "./D3Chart/Gradient";
-import './D3Chart/chart.scss'
 import { useState } from "react";
 import { useInterval } from "../hooks/useInterval";
 import Card from "./Card";
 import { useObserver } from "../hooks/useObserver";
+import './D3Chart/chart.scss'
 
 
 interface data{
@@ -19,6 +19,7 @@ interface data{
 export const D3Chart = ()=>{
         
        const [ref, dimensions] = useChartDimensions()
+      
        const [data,setData] = useState(getTimelineData());
 
        useInterval(()=>setData(getTimelineData()), 10000);
@@ -41,6 +42,9 @@ export const D3Chart = ()=>{
 
         if(dimensions === null || typeof dimensions === 'undefined')
             return null;
+
+        //dimensions.marginLeft+=20;
+        //dimensions.marginTop-=40;
 
         const domain = d3.extent(data, dateAccessor );
         const domain2 =d3.extent(data, temperatureAccessor);
@@ -93,9 +97,7 @@ export const D3Chart = ()=>{
 
 
         return (
-            <div className="row">
-                <div className="col-md-8" ref={ref}>
-                    <Card> 
+                <div className="chart-container" ref={ref}>
                         <svg className="Chart" width={dimensions.width} height={targetHeight}>
                             <g transform={`translate(${dimensions.marginLeft}, ${dimensions.marginTop})`} >
                             <defs>
@@ -115,9 +117,8 @@ export const D3Chart = ()=>{
                             </g>
                         </svg>
                 
-                    </Card>  
             
-                </div>
-            </div>
+                    </div>
+               
             )
 }

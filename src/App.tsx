@@ -11,6 +11,10 @@ import Home from './views/Home';
 import Blogs from './views/Blogs';
 
 import { ProjectView as Project} from './views/Project';
+import { Members } from './views/Members';
+import { Member } from './views/Member';
+import { Projects } from './views/Projects';
+import { Charts } from './views/Charts';
 /*
 function App() {
   return (
@@ -36,15 +40,21 @@ function App() {
 function App(){
 
 
+
   return(
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="blogs" element={<Blogs />} />
-              <Route path="main" element={<MainView />} />
-              <Route path="projects" element={<Blogs />}>
-                  <Route path=":projectID" element={<Project />} ></Route>
-              </Route>
+              <Route index element={<MainView />} />
+             
+              <Route path="members" element={<Members users={[]} />} ></Route>
+              <Route path="members/:memberID" element={<Member />} ></Route>
+
+              <Route path="projects" element={<Projects />}></Route>
+              <Route path="projects/:projectID" element={<Project />} ></Route>
+
+              <Route path="charts" element={<Charts/>}></Route>
+
+
             </Route>
           </Routes>
       );

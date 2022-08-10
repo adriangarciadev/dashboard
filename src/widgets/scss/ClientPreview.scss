@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../../scss/main.scss";
+
+
+.client-mini{
+    .name{
+        font-weight: 650;
+        color:map.get(main.$colors, "subtitle");
+
+        
+    }
+    .company{
+
+        margin:1rem 0 0 0;
+        
+    }
+    .date{
+        margin:1rem 0 0 0;
+        font-size:1.5rem;
+    }
+   
+}
