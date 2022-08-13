@@ -106,7 +106,7 @@ const RenderMemberRow=({user}:{user:user})=>{
 
     return(<li>
             <div>
-                <img className="img-fluid rounded-circle" src={`/profile_pictures/${user.img}`} alt={"name:"+user.name}></img>
+                <img className="img-fluid rounded-circle" src={`${process.env.PUBLIC_URL}/profile_pictures/${user.img}`} alt={"name:"+user.name}></img>
                 <span>{user.name}</span>
             </div>
             <span>{user.department}</span>

@@ -171,7 +171,7 @@ export const Members = ({users}: MembersProps)=>{
 
 
                     <div className="left">
-                        <img className="img-fluid rounded-circle" src={`/profile_pictures/${curr.img}`} alt={"name:"+curr.name}></img>
+                        <img className="img-fluid rounded-circle" src={`${process.env.PUBLIC_URL}/profile_pictures/${curr.img}`} alt={"name:"+curr.name}></img>
                     </div>
 
                     <div className="right">

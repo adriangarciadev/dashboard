@@ -45,7 +45,7 @@ export const UserMessage = (props: userMessageProps)=>{
           
             <div className="message">
                 <div className="name-picture">
-                    <img src={`/profile_pictures/${admin.pic}`} alt="admin" />
+                    <img src={`${process.env.PUBLIC_URL}/profile_pictures/${admin.pic}`} alt="admin" />
                     <p>{`${admin.name}`}</p>
                 </div>
                 <div className="content">

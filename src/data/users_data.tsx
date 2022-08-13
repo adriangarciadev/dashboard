@@ -31,6 +31,6 @@ export const getRandomUser=():user=>{
             id:getNextID() ,
             img:`pfile_0${ randomProfile( ) }.png`,
             department:jobs[ randomJobs() ],
-            "url":names[random]
+            url:names[random]
     };
 }

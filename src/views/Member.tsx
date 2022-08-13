@@ -36,7 +36,7 @@ export const Member = ()=>{
         <div className="member row g-0 p-0" style={{backgroundColor:bgColor, height:'100%'}} >
             <div className="col-lg-3 member-data">
                 <div>
-                    <img className="img-fluid rounded-circle" src={`/profile_pictures/${curr.img}`} alt={"name:"+curr.name}></img>
+                    <img className="img-fluid rounded-circle" src={`${process.env.PUBLIC_URL}/profile_pictures/${curr.img}`} alt={"name:"+curr.name}></img>
                 </div>
                 <p className="name">{curr.name}</p>
                 <p className="department">{curr.department}</p>
