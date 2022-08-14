@@ -94,8 +94,8 @@ const MainView = ()=>{
             </div>
 
             
-            <UserMessage timeout={10000}>
-                <p>Hello! my name is Adrian, I put these little mock up together from components I had laying around in my secret lab!</p>
+            <UserMessage timeout={12000}>
+                <p>Hello! my name is Adrian, nice to meet you. I put this little mock up together from components I had laying around in my secret lab!</p>
                 <p> welcome to the this little demo!, a simple dashboard mockup with some charts implemented on top of <a href="https://d3js.org/">d3</a></p>
             </UserMessage>
             
